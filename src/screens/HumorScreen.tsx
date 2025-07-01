@@ -7,25 +7,29 @@ export default function MoodSelectionScreen({ route, navigation }: any) {
 
     const humor = {
         alegre: require('../../assets/alegria.png'),
+        alegroso: require('../../assets/alegroso.png'),
         titulo1: 'Alegre',
-        cor1: '#ffd000',
-        alegria: "você está alegre!",
+        cor1: '#f7c297',
+        alegria: "Embora não possam sorrir ou falar, os hamsters demonstram sinais claros de alegria e bem-estar quando vivem em um ambiente saudável, seguro e estimulante. A felicidade de um hamster está diretamente ligada à sua qualidade de vida, e os tutores atentos conseguem identificar quando seu pequeno companheiro está satisfeito e emocionalmente equilibrado.",
         
         raiva: require('../../assets/raiva.png'),
+        raivoso: require('../../assets/raivoso.png'),
         titulo2: 'Raiva',
-        cor2: '#9dfcfd',
-        raivoso: "você está com raiva!",
+        cor2: '#f6a6b2',
+        raivante: "Embora pequenos e muitas vezes associados à fofura e docilidade, os hamsters também podem apresentar sinais de raiva ou agressividade, especialmente quando se sentem ameaçados, estressados ou desconfortáveis. A raiva em hamsters não é igual à raiva humana no sentido emocional profundo, mas representa uma resposta instintiva de defesa diante de situações que o animal percebe como perigosas ou invasivas.",
 
         triste: require('../../assets/tristeza.png'),
+        tristonho: require('../../assets/tristonho.png'),
         titulo3: 'Tristeza',
-        cor3: '#f5454f',
-        tristeza: "você está triste!",
+        cor3: '#4fc2f1',
+        tristeza: "A tristeza em hamsters, embora muitas vezes ignorada, é um estado emocional real e importante de se observar. Esses pequenos roedores, apesar de parecerem simples à primeira vista, são animais sensíveis e suscetíveis a mudanças no ambiente, na rotina e nos estímulos sociais. A tristeza em um hamster pode surgir por diversos motivos, incluindo solidão, estresse, tédio, dor física ou até mesmo luto pela perda de um companheiro (quando acostumados à presença de outro hamster, o que é raro, mas possível em algumas espécies).",
     };
 
     function resultado(escolha: number){
         if(escolha == 1){
             navigation.navigate('pag-result', {
                 emoji: humor.alegre,
+                emoji1: humor.alegroso,
                 titulo: humor.titulo1,
                 cor: humor.cor1,
                 texto: humor.alegria,
@@ -35,15 +39,17 @@ export default function MoodSelectionScreen({ route, navigation }: any) {
         if(escolha == 2){
             navigation.navigate('pag-result', {
                 emoji: humor.raiva,
+                emoji1: humor.raivoso,
                 titulo: humor.titulo2,
                 cor: humor.cor2,
-                texto: humor.raivoso,
+                texto: humor.raivante,
                 usuario: email,
             });
         }
         if(escolha == 3){
             navigation.navigate('pag-result', {
                 emoji: humor.triste,
+                emoji1: humor.tristonho,
                 titulo: humor.titulo3,
                 cor: humor.cor3,
                 texto: humor.tristeza,

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { ScrollView, View, Text, TextInput, Pressable } from 'react-native';
+import { ScrollView, View, Text, TextInput, Pressable, Image } from 'react-native';
 
 export default function MoodSelectionScreen({ route, navigation }: any) {
 
-    const { emoji, titulo, cor, texto, usuario } = route.params;
+    const { emoji, emoji1, titulo, cor, texto, usuario } = route.params;
     
     const [resposta, setResposta] = useState("");
     const [motivo, setMotivo] = useState("Ainda não há nenhuma respostas");
@@ -21,26 +21,28 @@ export default function MoodSelectionScreen({ route, navigation }: any) {
             <View style={{flex: 1, alignItems: 'center'}}>
 
                 <Text 
-                    style={{fontSize: 28, 
-                            color: cor, 
-                            textShadowColor: 'black', 
+                    style={{fontSize: 35, 
+                            color: cor,
+                            fontWeight: 'bold',
+                            paddingTop: 20,
+                            paddingBottom: 20,
+                            textShadowColor: 'black',
                             textShadowRadius: 3.5, 
-                            fontWeight: 'bold', 
-                            paddingTop: 20
                         }}
                 >
-                    {titulo}
+                    ...: {titulo} :...
                 </Text>
 
                 <Text style={{textAlign: 'justify', fontSize: 16.5, width: 350, marginBottom: 20}}>{texto}</Text>
                 
-                <View style={{backgroundColor: '#ffeead', borderWidth: 5, borderRadius: 30, marginBottom: 30, borderColor: "#ffcc5c", padding: 5,}}>
+                <View style={{backgroundColor: '#28b463', borderWidth: 5, borderRadius: 30, marginBottom: 30, borderColor: "#2ecc71", padding: 5,}}>
                     
                     <Text 
-                        style={{fontSize: 20, 
+                        style={{fontSize: 20,
+                                textAlign: 'center',
                                 fontWeight: 'bold', 
-                                paddingLeft: 3, 
-                                paddingBottom: 5
+                                paddingBottom: 10,
+                                paddingTop: 10,
                             }}
                     >
                         Por que ele está assim?
@@ -100,6 +102,11 @@ export default function MoodSelectionScreen({ route, navigation }: any) {
                 
                 </View>
                 
+                <Image
+                    style={{ width: 150, height: 150, borderRadius: 100, borderWidth: 5, borderColor: cor,}} 
+                    source={emoji1}
+                />
+
                 <View style={{justifyContent: 'flex-start', alignItems: 'flex-start', width: 350, marginTop: 15}}>
 
                 </View>
